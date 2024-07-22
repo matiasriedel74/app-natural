@@ -48,7 +48,7 @@
 
                 bin/
 
-                    adabasdb_start_command
+                    adabasdb_start_command # Archivo o Script de la App
 
             adabas_manager/
 
@@ -58,7 +58,7 @@
 
                 bin/
 
-                adabas_manager_start_command 
+                adabas_manager_start_command # Archivo o Script de la App
 
             natural_ce/
 
@@ -68,7 +68,7 @@
 
                 bin/
 
-                    natural_ce_start_command 
+                    natural_ce_start_command # Archivo o Script de la App
 
 
 
