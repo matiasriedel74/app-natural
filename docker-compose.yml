@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  adabasdb:
+    image: adabasdb:latest
+    container_name: adabasdb
+    ports:
+      - "60001:60001"
+    environment:
+      - ADABAS_DB_ID=1
+      - ADABAS_LOGGING=debug
+    volumes:
+      - adabas_data:/var/adabas/data
+      - adabas_log:/var/adabas/log
+
+  adabas_manager:
+    image: adabas-manager:latest
+    container_name: adabas_manager
+    depends_on:
+      - adabasdb
+    ports:
+      - "60002:60002"
+    environment:
+      - ADABAS_DB_HOST=adabasdb
+      - ADABAS_DB_PORT=60001
+      - ADABAS_MANAGER_LOGGING=debug
+    volumes:
+      - adabas_manager_data:/var/adabas/manager/data
+      - adabas_manager_log:/var/adabas/manager/log
+
+  natural_ce:
+    image: natural-ce:latest
+    container_name: natural_ce
+    depends_on:
+      - adabasdb
+      - adabas_manager
+    ports:
+      - "9000:9000"
+    environment:
+      - NATURAL_DB_ID=1
+      - ADABAS_DB_HOST=adabasdb
+      - ADABAS_DB_PORT=60001
+      - NATURAL_LOGGING=debug
+    volumes:
+      - natural_ce_data:/var/natural_ce/data
+      - natural_ce_log:/var/natural_ce/log
+
+volumes:
+  adabas_data:
+    external: false
+  adabas_log:
+    external: false
+  adabas_manager_data:
+    external: false
+  adabas_manager_log:
+    external: false
+  natural_ce_data:
+    external: false
+  natural_ce_log:
+    external: false
