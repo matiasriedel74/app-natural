@@ -1,6 +1,8 @@
 - Documentacion:
 
-1)- Permisos de ejecucion: chmod +x adabasdb/start.sh adabas_manager/start.sh natural_ce/start.sh
+1)- Permisos de ejecucion: 
+
+    chmod +x adabasdb/start.sh adabas_manager/start.sh natural_ce/start.sh
 
 2)- Docker:
 
