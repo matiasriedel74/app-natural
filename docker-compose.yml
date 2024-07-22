@@ -1,8 +1,8 @@
 version: '3.8'
 
 services:
-  adabasdb:
-    image: softwareag/adabas-ce:latest
+  adabas-db:
+    image: softwareag/adabas-ce:7.2.0
     container_name: adabas-db
     ports:
       - "60001:60001"
@@ -10,11 +10,11 @@ services:
       - ADABAS_DB_ID=1
       - ADABAS_LOGGING=debug
     volumes:
-      - ./data/adabas-db/var/adabas/data
+      - ./data/adabas-db:/adabas/data
       - ./logs/adabas-db:/var/adabas/log
 
-  adabas_manager:
-    image: softwareag/adabasmanager-ce:latest
+  adabas-manager:
+    image: softwareag/adabasmanager-ce:9.2.0
     container_name: adabas-manager
     depends_on:
       - adabas-db
@@ -29,7 +29,7 @@ services:
       - ./logs/adabas_manager:/var/adabas/manager/log
 
   natural_ce:
-    image: softwareag/natural-ce:latest
+    image: softwareag/natural-ce:9.3.1
     container_name: natural-ce
     depends_on:
       - adabas-db
