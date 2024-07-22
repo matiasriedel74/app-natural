@@ -35,22 +35,22 @@
 
 - Estructura de la App:
 
-docker-compose.yml
-    adabasdb/
-        Dockerfile
-        start.sh
-        bin/
-            adabasdb_start_command
-    adabas_manager/
-        Dockerfile
-        start.sh
-        bin/
-        adabas_manager_start_command 
-    natural_ce/
-        Dockerfile
-        start.sh
-        bin/
-            natural_ce_start_command 
+    docker-compose.yml
+        adabasdb/
+            Dockerfile
+            start.sh
+            bin/
+                adabasdb_start_command
+        adabas_manager/
+            Dockerfile
+            start.sh
+            bin/
+            adabas_manager_start_command 
+        natural_ce/
+            Dockerfile
+            start.sh
+            bin/
+                natural_ce_start_command 
 
 
 --------
