@@ -1,3 +1,21 @@
+- Imagenes Utilizadass:
+
+1)- natural-ce: https://hub.docker.com/r/softwareag/natural-ce
+
+    Version: 9.3.1
+
+2)- adabas-manager-ce: https://hub.docker.com/r/softwareag/adabasmanager-ce/tags
+
+    Version: 9.2.0
+
+3)- adabas-ce: https://hub.docker.com/r/softwareag/adabas-ce
+
+    Version: 7.2.0
+
+
+--------
+
+
 - Documentacion:
 
 1)- Permisos de ejecucion: 
@@ -13,9 +31,29 @@
 3)- Verificar actividad de contenedores
 
 
+--------
+
+- Estructura de la App:
+
+docker-compose.yml
+    adabasdb/
+        Dockerfile
+        start.sh
+        bin/
+            adabasdb_start_command
+    adabas_manager/
+        Dockerfile
+        start.sh
+        bin/
+        adabas_manager_start_command 
+    natural_ce/
+        Dockerfile
+        start.sh
+        bin/
+            natural_ce_start_command 
 
 
-
+--------
 
 
 Created By Matias O. Riedel
